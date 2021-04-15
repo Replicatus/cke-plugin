@@ -35,13 +35,9 @@ export default class CustomElemUI extends Plugin {
                     isBlock: true,
                 });
             }
-
-
             editor.model.schema.extend('$text', {
                 allowIn: tag
             });
-
-
             //---conversion
             editor.conversion.for('editingDowncast').elementToElement(
                 editable ?

@@ -61,7 +61,7 @@ import Image from '@ckeditor/ckeditor5-image/src/image'
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert'
 import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
 // import MathType from '@wiris/mathtype-ckeditor5'
-// import InsertRouterLink from './customPlaginsCKEditor'
+import InsertRouterLink from './customPlaginsCKEditor'
 import CustomElementPlugin from "./customElement/customelement";
 // import InsertIcon from '@/assets/icons/insert.svg'
 // import "./customElement/translations/ru"
@@ -70,7 +70,6 @@ export default {
   name: "vue-editor",
   components: {
     'vue-ckeditor': CKEditor.component,
-
   },
   props: {
     editDataProp: {
@@ -127,6 +126,7 @@ export default {
           ListPlugin,
           ParagraphPlugin,
           Alignment,
+          InsertRouterLink,
           CustomElementPlugin
           // MathType
         ],
@@ -164,7 +164,7 @@ export default {
             'numberedList',//+
             'bulletedList',//+
             '|',
-            // 'addRouterLink',
+            'addRouterLink',
             'indent',//-
             'outdent',//-
             '|',
