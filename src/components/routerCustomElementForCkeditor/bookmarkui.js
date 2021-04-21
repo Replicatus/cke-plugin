@@ -32,14 +32,14 @@ export default class LinkUI extends Plugin {
             const btn = new ButtonView(locale);
             btn.set({
                 label: editor.t('routerLink'),
-                withText: false,
+                withText: true,
                 tooltip: true,
                 icon: bookmarkIcon
             });
 
-            const bookmarkCommand = editor.commands.get('router-link');
-            btn.bind('isEnabled').to(bookmarkCommand, 'isEnabled');
-            btn.bind('isOn').to(bookmarkCommand, 'isRouterLink');
+            const routerLinkCommand = editor.commands.get('router-link');
+            btn.bind('isEnabled').to(routerLinkCommand, 'isEnabled');
+            btn.bind('isOn').to(routerLinkCommand, 'isRouterLink');
 
             this.listenTo(btn, 'execute', () => {
                 this.editor.execute('router-link');
