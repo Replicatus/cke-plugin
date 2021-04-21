@@ -60,9 +60,10 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Image from '@ckeditor/ckeditor5-image/src/image'
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert'
 import CKEditorInspector from '@ckeditor/ckeditor5-inspector';
+import RouterLink from "./routerCustomElementForCkeditor/bookmark";
 // import MathType from '@wiris/mathtype-ckeditor5'
-import InsertRouterLink from './customPlaginsCKEditor'
-import CustomElementPlugin from "./customElement/customelement";
+// import InsertRouterLink from './customPlaginsCKEditor'
+// import CustomElementPlugin from "./customElement/customelement";
 // import InsertIcon from '@/assets/icons/insert.svg'
 // import "./customElement/translations/ru"
 // import '@ckeditor/ckedit'
@@ -126,26 +127,28 @@ export default {
           ListPlugin,
           ParagraphPlugin,
           Alignment,
-          InsertRouterLink,
-          CustomElementPlugin
+          RouterLink
+          // InsertRouterLink,
+          // CustomElementPlugin
           // MathType
         ],
-        CustomElement:{
-          items:[
-            {
-              tag: 'router-link',/* placeholder: 'some text',*/
-              attributes:{class: 'artikle-link', to:'/admin'},/* icon:InsertIcon,*/
-              inline:false, editable:false
-            },
-            // {tag: 'tagname2'},
-          ]
-        },
+        // CustomElement:{
+        //   items:[
+        //     {
+        //       tag: 'router-link',/* placeholder: 'some text',*/
+        //       attributes:{class: 'artikle-link', to:'/admin'},/* icon:InsertIcon,*/
+        //       inline:false, editable:false
+        //     },
+        //     // {tag: 'tagname2'},
+        //   ]
+        // },
         // extraPlugins: [InsertRouterLink,],
         toolbar: {
           items: [
             'heading',//+
             '|',
-            'custom-element-router-link',
+            // 'custom-element-router-link',
+            'router-link',
             '|',
             // 'custom-element-tagname2',
             'fontSize',//+
@@ -164,7 +167,7 @@ export default {
             'numberedList',//+
             'bulletedList',//+
             '|',
-            'addRouterLink',
+            // 'addRouterLink',
             'indent',//-
             'outdent',//-
             '|',

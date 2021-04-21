@@ -37,6 +37,7 @@
     "@ckeditor/ckeditor5-table": "^25.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^25.0.0",
     "@ckeditor/ckeditor5-ui": "^25.0.0",
+    "@ckeditor/ckeditor5-utils": "^25.0.0",
     "@ckeditor/ckeditor5-vue2": "^1.0.5",
     "core-js": "^3.6.5",
     "postcss-loader": "^3.0.0",
