@@ -38,6 +38,7 @@ export default class LinkUI extends Plugin {
             });
 
             const routerLinkCommand = editor.commands.get('router-link');
+            console.log("comands", routerLinkCommand)
             btn.bind('isEnabled').to(routerLinkCommand, 'isEnabled');
             btn.bind('isOn').to(routerLinkCommand, 'isRouterLink');
 
@@ -136,7 +137,7 @@ export default class LinkUI extends Plugin {
         const view = this.editor.editing.view;
         const selection = view.document.selection;
 
-        var elm = selection.getSelectedElement();
+        let elm = selection.getSelectedElement();
         if (elm && elm.is('containerElement')) {
             const customRouterProperty = !!elm.getCustomProperty('routerName');
             if (customRouterProperty) {
@@ -153,7 +154,7 @@ export default class LinkUI extends Plugin {
             return;
         }
 
-        const routerName = elmRouter.getAttribute('name');
+        const routerName = elmRouter.getAttribute('to');
         if (routerName) {
             showViewPopup(this);
         }

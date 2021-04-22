@@ -7,27 +7,27 @@ export default class BookmarkCommand extends Command {
         this.set("isRouterLink", false);
     }
 
-    execute(routerName,value) {
+    execute(routerValue) {
         const editor = this.editor;
         const modelSelection = editor.model.document.selection;
-
         editor.model.change(modelWriter => {
             if (modelSelection.isCollapsed) {
-                routerName = routerName || '';
+                routerValue = routerValue || '';
 
                 const router = modelWriter.createElement('router-link', {
-                    name:value,
-                    to: routerName }
+                    // name:value,
+                    to: routerValue
+                }
                 );
                 editor.model.insertContent(router);
-
+                console.log("execute router", router)
                 modelWriter.setSelection(router, 'on');
             }
             else {
-                var elm = modelSelection.getSelectedElement();
+                let elm = modelSelection.getSelectedElement();
                 if (elm && elm.is('element')) {
-                    if (elm.hasAttribute('name')) {
-                        modelWriter.setAttribute('name', routerName, elm);
+                    if (elm.hasAttribute('to')) {
+                        modelWriter.setAttribute('to', routerValue, elm);
                     }
                 }
             }
@@ -42,8 +42,8 @@ export default class BookmarkCommand extends Command {
         this.isRouterLink = false;
 
         if (elmSelected) {
-            this.value = elmSelected.getAttribute('name');
-            this.isRouterLink = elmSelected.hasAttribute('name');
+            this.value = elmSelected.getAttribute('to');
+            this.isRouterLink = elmSelected.hasAttribute('to');
         }
         else {
             this.value = null;

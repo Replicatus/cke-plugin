@@ -97,7 +97,7 @@ export default class EditPopup extends View {
         });
 
         if (eventName) {
-            button.delegate('execute').to(this, eventName);
+            button.delegate('execute').to( eventName);/*this,eventName*/
         }
 
         return button;

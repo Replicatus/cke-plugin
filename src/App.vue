@@ -3,7 +3,7 @@
     <nav><router-link to="/">Main page</router-link></nav>
     <nav><router-link to="/page-2">page-2</router-link></nav>
     <v-runtime-template :template="templateText"/>
-    <vue-editor :edit-data-prop="text" :loading="false"/>
+    <vue-editor :edit-data-prop.sync="text" :loading="false"/>
     <router-view> </router-view>
   </div>
 </template>

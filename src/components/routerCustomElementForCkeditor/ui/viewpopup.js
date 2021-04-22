@@ -58,7 +58,7 @@ export default class ViewPopup extends View {
             }
         });
 
-        button.delegate('execute').to(this, eventName);
+        button.delegate('execute').to(eventName);
 
         return button;
     }
