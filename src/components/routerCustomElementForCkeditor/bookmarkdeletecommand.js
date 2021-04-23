@@ -10,9 +10,9 @@ export default class BookmarkDeleteCommand extends Command {
                 return;
             }
             else { // called from bookmarkui._createViewPopup then the viewPopup fires 'delete'
-                var elm = modelSelection.getSelectedElement();
+                let elm = modelSelection.getSelectedElement();
                 if (elm && elm.is('element')) { // on the Model, bookmark is an Element (while on the View, bookmark is an attributeElement)
-                    if (elm.hasAttribute('name')) {
+                    if (elm.hasAttribute('to')) {
                         modelWriter.remove(elm);
                     }
                 }

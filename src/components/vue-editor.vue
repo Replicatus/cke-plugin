@@ -231,9 +231,11 @@ export default {
       this.flagReady = true
     },
     inputNpaFunction(value) {
+      // console.log("inputNpaFunction " + value)
       this.newDataForEditor = value
     },
     sendData() {
+      // console.log("sendData " + this.newDataForEditor)
       this.$emit('update:edit-data-prop', '<div>' + this.newDataForEditor + '</div>')
     }
   },

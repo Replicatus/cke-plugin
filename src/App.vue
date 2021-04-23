@@ -2,8 +2,8 @@
   <div id="app">
     <nav><router-link to="/">Main page</router-link></nav>
     <nav><router-link to="/page-2">page-2</router-link></nav>
-    <v-runtime-template :template="templateText"/>
-    <vue-editor :edit-data-prop.sync="text" :loading="false"/>
+    <v-runtime-template :template="templateText" style="margin: 40px 0"/>
+    <vue-editor :edit-data-prop.sync="text" :is-npa="true" :loading="false"/>
     <router-view> </router-view>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      text: '<p>value</p> <p> adfasdfasd</p>'
+      text: '<router-link to="/page-2"><span>222</span></router-link>'
     }
   },
   computed: {

@@ -3,7 +3,6 @@
 export default class BookmarkCommand extends Command {
     constructor(editor) {
         super(editor);
-
         this.set("isRouterLink", false);
     }
 
@@ -13,15 +12,14 @@ export default class BookmarkCommand extends Command {
         editor.model.change(modelWriter => {
             if (modelSelection.isCollapsed) {
                 routerValue = routerValue || '';
-
                 const router = modelWriter.createElement('router-link', {
-                    // name:value,
                     to: routerValue
-                }
-                );
+                });
+                 const routerText = modelWriter.createElement( 'router-text',{} );
+                 modelWriter.append(routerText, router);
                 editor.model.insertContent(router);
-                console.log("execute router", router)
                 modelWriter.setSelection(router, 'on');
+                console.log(routerValue, routerText)
             }
             else {
                 let elm = modelSelection.getSelectedElement();
